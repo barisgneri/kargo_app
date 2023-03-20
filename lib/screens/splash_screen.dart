@@ -21,18 +21,38 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
   }
 
+  final String _logoSrc = 'assets/logo.png';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
+      backgroundColor: Color.fromRGBO(2, 54, 86, 1),
       body: Center(
-        child: Container(
-          height: 300,
-          width: 300,
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(
-                      'https://cdn-icons-png.flaticon.com/512/3566/3566778.png'))),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: 250,
+              width: 250,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(_logoSrc),
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(28.0),
+              child: Text(
+                'Kargo APP',
+                style: TextStyle(
+                  color: Colors.pink,
+                  fontSize: 35,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
